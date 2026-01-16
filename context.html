@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Properties of Text — Black Beauty (SHS)</title>
+  <style>
+    :root{
+      --bg1:#2b1b12;
+      --bg2:#4a2d1c;
+      --paper:#fff4df;
+      --ink:#2a1d12;
+      --accent:#7a4a2a;
+      --muted:rgba(42,29,18,.78);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --border: rgba(122,74,42,.35);
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      padding: 28px;
+
+      /* Victorian-inspired background (no images needed) */
+      background:
+        radial-gradient(1200px 700px at 20% 20%, rgba(255,255,255,0.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 35%, rgba(255,255,255,0.12), transparent 55%),
+        repeating-linear-gradient(45deg,
+          rgba(122,74,42,0.12) 0px,
+          rgba(122,74,42,0.12) 10px,
+          rgba(168,111,72,0.08) 10px,
+          rgba(168,111,72,0.08) 20px),
+        linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 50%, var(--bg1) 100%);
+      background-attachment: fixed;
+    }
+
+    .wrap{
+      max-width: 1050px;
+      margin: 0 auto;
+      background: rgba(255,244,223,0.96);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      border: 2px solid var(--border);
+      padding: 20px;
+      position: relative;
+      overflow:hidden;
+    }
+
+    .wrap::before{
+      content:"";
+      position:absolute;
+      inset: 10px;
+      border-radius: 14px;
+      border: 2px dashed var(--border);
+      pointer-events:none;
+    }
+
+    header{
+      padding: 6px 10px 16px;
+      text-align:center;
+      position:relative;
+      z-index:1;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(22px, 2.6vw, 30px);
+      letter-spacing:.3px;
+    }
+
+    .sub{
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      line-height:1.4;
+    }
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:center;
+      margin: 8px 0 14px;
+      position:relative;
+      z-index:1;
+    }
+
+    nav a{
+      text-decoration:none;
+      color: var(--ink);
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--border);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    nav a:hover{ background: rgba(255,255,255,0.9); }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 16px;
+      position:relative;
+      z-index:1;
+    }
+
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      background: rgba(255,255,255,0.65);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 14px 12px;
+    }
+
+    .card h2{
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--accent);
+    }
+
+    .card h3{
+      margin: 12px 0 6px;
+      font-size: 15px;
+      color: var(--ink);
+    }
+
+    ul{
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    li{ margin: 6px 0; line-height:1.4; color: var(--muted); }
+
+    .badge{
+      display:inline-block;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(122,74,42,0.12);
+      border: 1px solid var(--border);
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 520px){
+      .two-col{ grid-template-columns: 1fr; }
+    }
+
+    .mini{
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+    }
+
+    .mini h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    footer{
+      margin-top: 16px;
+      text-align:center;
+      font-size: 12px;
+      color: rgba(42,29,18,.75);
+      position:relative;
+      z-index:1;
+    }
+
+    .links a{
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px dotted rgba(122,74,42,.6);
+    }
+    .links a:hover{ border-bottom-style: solid; }
+  </style>
+</head>
+
+<body>
+  <main class="wrap" id="top">
+    <header>
+      <h1>Properties of Text </h1>
+      <p class="sub">
+        A writing-focused analysis of <strong>Black Beauty</strong> (Anna Sewell): structure, coherence,
+        tone, style, language, and mechanics, plus strengths and weaknesses.
+      </p>
+    </header>
+
+    <!-- Internal links for navigation (rubric-friendly) -->
+    <nav aria-label="Page navigation">
+      <a href="#structure">Structure & Style</a>
+      <a href="#language">Language & Mechanics</a>
+      <a href="#strengths">Strengths</a>
+      <a href="#weaknesses">Weaknesses</a>
+      <a href="#guides">Grammar/Style Guides</a>
+    </nav>
+
+    <section class="grid">
+      <!-- Main analysis -->
+      <article class="card" id="structure">
+        <span class="badge">Text Feature Focus</span>
+        <h2>Structure, Coherence, Tone, and Style</h2>
+
+        <h3>Structure</h3>
+        <ul>
+          <li><strong>Chronological organization:</strong> the story follows Black Beauty’s life stages from youth to old age.</li>
+          <li>Each new owner or environment functions as a “chapter” that shows a new lesson about treatment of animals.</li>
+        </ul>
+
+        <h3>Coherence</h3>
+        <ul>
+          <li>Events connect logically because changes in setting (farm → carriage work → harsh labor → rescue) explain why Black Beauty’s situation shifts.</li>
+          <li>Transitions are clear: the narrative usually explains <em>why</em> Black Beauty is sold or moved.</li>
+        </ul>
+
+        <h3>Tone</h3>
+        <ul>
+          <li><strong>Reflective and moral:</strong> the narrator looks back on experiences to highlight kindness, responsibility, and cruelty.</li>
+          <li>The tone becomes more serious in chapters showing neglect or abuse, then more hopeful during rescue and recovery.</li>
+        </ul>
+
+        <h3>Style</h3>
+        <ul>
+          <li><strong>First-person narration (horse’s point of view):</strong> creates empathy and makes the message personal.</li>
+          <li>Mostly simple, direct sentences to make the story accessible for young readers while still delivering serious themes.</li>
+        </ul>
+      </article>
+
+      <!-- Side panel -->
+      <aside class="card">
+        <h2 id="language">Language and Mechanics</h2>
+
+        <ul>
+          <li><strong>Word choice:</strong> clear and descriptive, often focused on feelings, actions, and consequences.</li>
+          <li><strong>Organization:</strong> paragraphs usually center on one event or lesson, making the text easy to follow.</li>
+          <li><strong>Mechanics:</strong> standard grammar and punctuation support readability and a smooth narrative flow.</li>
+          <li><strong>Repetition:</strong> used to emphasize key ideas (kindness, patience, and humane treatment).</li>
+        </ul>
+
+        <div class="two-col" style="margin-top:12px;">
+          <div class="mini" id="strengths">
+            <h3>Strengths</h3>
+            <ul>
+              <li>Emotional impact</li>
+              <li>Easy to understand</li>
+              <li>Strong moral lesson</li>
+              <li>Clear cause-and-effect</li>
+            </ul>
+          </div>
+
+          <div class="mini" id="weaknesses">
+            <h3>Weaknesses</h3>
+            <ul>
+              <li>Slow pacing in some parts</li>
+              <li>Some human characters feel less developed</li>
+              <li>Lessons can feel repetitive for some readers</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card links" id="guides" style="margin-top:16px;">
+      <h2>Grammar / Style Guides (for references)</h2>
+      <ul>
+        <li><a href="https://owl.purdue.edu/" target="_blank" rel="noopener">Purdue OWL</a> — writing basics, grammar, and academic formatting</li>
+        <li><a href="https://www.merriam-webster.com/grammar" target="_blank" rel="noopener">Merriam-Webster Grammar</a> — grammar explanations and examples</li>
+        <li><a href="https://dictionary.cambridge.org/grammar/" target="_blank" rel="noopener">Cambridge Dictionary Grammar</a> — grammar rules with clear examples</li>
+      </ul>
+
+      <p style="margin-top:10px; color: rgba(42,29,18,.78);">
+        <a href="#top">Back to Top</a>
+      </p>
+    </section>
+
+    <footer>
+      Prepared for Senior High School text analysis. Focus: writing quality (not just plot summary).
+    </footer>
+  </main>
+</body>
+</html>
